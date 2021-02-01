@@ -1,0 +1,62 @@
+<html>
+   <head>
+      <script>
+        function checkEmail(email) {
+            var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            return re.test(email);
+        }
+        function confirmEmail() {
+            var email = document.getElementById("email").value;
+        
+            if (checkEmail(email)) {
+                alert('Adresse e-mail valide');
+            } else {
+                alert('Adresse e-mail non valide');
+            }
+            return false;
+        }
+
+
+         function checkTel(tel) {
+            var re = /\d{2}.?\d{2}.?\d{2}.?\d{2}.?\d{2}/g;
+            return re.test(tel);
+        }
+
+        function confirmTel() {
+            var tel = document.getElementById("tel").value;
+
+            if (checkTel(tel)) {
+                alert('Numéro de téléphone valide');
+            } else {
+                alert('Numéro de téléphone non valide');
+            }
+            return false;
+        }
+
+
+        function confirmForm() {
+            if (document.getElementById("login").value == "login" && document.getElementById("password").value == "password") {
+                    alert('Identifiant reconnu');
+            } else {
+                    alert('Identifiant non reconnu');
+            }
+            return false;
+        }
+      </script>
+   </head>
+   <body>
+      <p>Entrez une adresse email :</p>
+      <input id='email'>
+      <button type='submit' onclick="confirmEmail()">Valider</button>
+
+      <p>Entrez numéro de téléphone :</p>
+      <input id='tel'>
+      <button type='submit' onclick="confirmTel()">Valider</button>
+
+      <p>Entrez un login:</p>
+      <input type="text" id='login'>
+      <p>Entrez un password:</p>
+      <input type="password" id='password'>
+      <button type='submit' onclick="confirmForm()">Valider</button>
+   </body>
+</html>
